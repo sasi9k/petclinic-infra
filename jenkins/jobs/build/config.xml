@@ -9,7 +9,7 @@
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <url>git@github.com:sasi9k/petclinic.git</url>
-        <credentialsId>d89b0687-84f3-4e99-8b12-3a8627bcd5d0</credentialsId>
+        <credentialsId></credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -34,10 +34,10 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.BatchFile>
-      <command>REM .\mvnw -gs C:\Users\Jesus\.m2\settings.xml versions:set -DnewVersion=1.5.1-SNAPSHOT</command>
+      <command>.\mvnw -gs settings.xml versions:set -DnewVersion=1.5.1-SNAPSHOT</command>
     </hudson.tasks.BatchFile>
     <hudson.tasks.BatchFile>
-      <command>REM .\mvnw -gs C:\Users\Jesus\.m2\settings.xml deploy</command>
+      <command>.\mvnw -gs settings.xml deploy</command>
     </hudson.tasks.BatchFile>
   </builders>
   <publishers>
