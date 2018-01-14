@@ -41,7 +41,7 @@
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <url>git@github.com:sasi9k/petclinic-test.git</url>
-        <credentialsId>d89b0687-84f3-4e99-8b12-3a8627bcd5d0</credentialsId>
+        <credentialsId></credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
