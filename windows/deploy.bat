@@ -5,6 +5,10 @@ cd %mypath%
                   -Dartifact=%GROUPID%:%ARTIFACTID%:%VERSION%-SNAPSHOT:%PACKAGING% ^
 		  -Dtransitive=false -DoutputDirectory=. -Dmdep.stripVersion=true
 
+IF %ERRORLEVEL% NEQ 0 (
+  REM do something here to address the error
+  ECHO "**************Error Code**************"
+)
 SET TARGET_DIR=%1
 echo %1
 echo "------"
