@@ -1,4 +1,4 @@
 echo off
 SET mypath=%~dp0
 cd %mypath%
-.\mvnw -gs settings.xml test
+REM .\mvnw -gs settings.xml test
