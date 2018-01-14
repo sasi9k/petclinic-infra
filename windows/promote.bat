@@ -1,3 +1,4 @@
+echo off
 SET mypath=%~dp0
 cd %mypath%
 .\mvnw -U -gs settings.xml  org.apache.maven.plugins:maven-dependency-plugin:2.8:copy ^
