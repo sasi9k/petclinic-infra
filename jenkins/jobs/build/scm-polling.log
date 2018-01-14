@@ -1,0 +1,10 @@
+Started on Jan 14, 2018 12:32:00 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision 5107a11f1152f97a409de3b4795597dd8750e332 (refs/remotes/origin/master)
+ > git.exe --version # timeout=10
+using GIT_SSH to set credentials 
+ > git.exe ls-remote -h git@github.com:sasi9k/petclinic.git # timeout=10
+Found 8 remote heads on git@github.com:sasi9k/petclinic.git
+[poll] Latest remote head revision on refs/heads/master is: 5107a11f1152f97a409de3b4795597dd8750e332 - already built by 35
+Done. Took 0.61 sec
+No changes
