@@ -69,7 +69,7 @@
       <configs>
         <hudson.plugins.parameterizedtrigger.CurrentBuildParameters plugin="parameterized-trigger@2.35.2"/>
       </configs>
-      <downstreamProjectNames>petclinic/prod-deploy</downstreamProjectNames>
+      <downstreamProjectNames>petclinic-demo/prod-deploy</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>
