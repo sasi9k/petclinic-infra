@@ -1,8 +1,8 @@
-.\mvnw -U org.apache.maven-plugins:maven-dependency-plugin:2.8:copy ^
+.\mvnw -U -gs settings.xml  org.apache.maven-plugins:maven-dependency-plugin:2.8:copy ^
                   -Dartifact=${GROUPID}:${ARTIFACTID}:${VERSION}-SNAPSHOT:${PACKAGING} ^
 		  -Dtransitive=false -DoutputDirectory=. -Dmdep.stripVersion=true
 
-.\mvn deploy:deploy-file -DgroupId=${GROUPID} ^
+.\mvn -gs settings.xml deploy:deploy-file -DgroupId=${GROUPID} ^
                         -DartifactId=${ARTIFACTID} ^
 		        -Dversion=${VERSION} ^
 		        -Dpackaging=${PACKAGING} ^
