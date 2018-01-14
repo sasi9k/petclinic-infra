@@ -1,2 +1,2 @@
 ## CI/CD Workflow Diagram
-![CICD Workflow](CICDWorkFlow.jpeg)
+![CICD Workflow](media/images/CICDWorkFlow.jpeg)
