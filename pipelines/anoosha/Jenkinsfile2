@@ -1,0 +1,23 @@
+node("win_slave1") {
+   stage 'build'
+   cleanWs()
+    //git 'https://github.com/izealinc/petclinic.git'
+    git( url: 'https://github.com/izealinc/petclinic.git',
+         branch: '${BRANCH_NAME}'
+       )
+    bat 'mvn versions:set -DnewVersion=1.5.1-SNAPSHOT'
+    bat 'mvn package'
+    echo 'completebuild'
+  stage 'archieve'
+   archiveArtifacts '**/target/*.jar'
+   echo 'complete archiving'
+   stage 'report'
+   junit '**/target/surefire-reports/*.xml'
+   sleep 3
+   retry(3) {
+    echo "completed"
+
+}
+  
+  
+   }
