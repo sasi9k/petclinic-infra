@@ -1,0 +1,19 @@
+node ('win_slave1'){
+   stage 'build'
+   cleanWs()
+    git( url: 'https://github.com/izealinc/petclinic.git',
+         branch: '${BRANCH_NAME}'
+       )
+//   dir('spring-petclinic'){
+  bat 'mvn versions:set -DnewVersion=1.5.1-SNAPSHOT'
+   bat 'mvn package'
+// }
+  
+   echo 'Build Completed'
+   stage 'reports'
+   junit '**/target/surefire-reports/*.xml'
+   stage 'Archive'
+   archiveArtifacts '**/target/*.jar'
+   echo 'complete Archiving'
+   echo 'Deploy Completed'
+}
