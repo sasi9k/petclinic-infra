@@ -18,5 +18,7 @@ node('win_slave1') {
    stage 'Archive'
    archiveArtifacts '**/target/*.jar'
    echo 'Completed Archiving'
+   stage 'Deploy'
+   build job: 'kalyan/deploy', propagate: true, wait: true
    echo 'Completed Deploy'
 }
