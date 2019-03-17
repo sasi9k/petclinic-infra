@@ -12,4 +12,5 @@ node('win_slave1') {
     stage 'archive'
     archiveArtifacts '**/target/*.jar'
     echo 'Completed archiving'
+    // http://springpetclinic-env.kfqhm5ccsp.us-east-1.elasticbeanstalk.com
 }
