@@ -1,7 +1,11 @@
 ---
 - hosts: all
   tasks:
-  - name: create file karthikeya.txt
+  - name: delete file karthikeya.txt
     file:
       path: "/tmp/karthikeya.txt"
+      state: absent
+  - name: delete file karthikeya2.txt
+    file:
+      path: "/tmp/karthikeya2.txt"
       state: absent
