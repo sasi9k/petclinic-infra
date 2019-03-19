@@ -2,8 +2,7 @@ node ('ubuntu_slave5'){
    stage 'build'
    cleanWs()
     if (isUnix()) {
-        //sh 'git clone -b ${BRANCH_NAME} https://github.com/sasi9k/petclinic-infra.git'
-		checkout scm
+        sh 'git clone -b ${BRANCH_NAME} https://github.com/sasi9k/petclinic-infra.git'
         dir('pipelines/karthik/ansible') {
             sh 'ansible-playbook file.yml -i 192.168.1.221, -u desktop6izealinc'
         }
