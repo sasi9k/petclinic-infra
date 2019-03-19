@@ -16,6 +16,6 @@
     file: path={{ targetdir }} state=directory
   - name: Unarchive a file that needs to be downloaded from internet
     unarchive:
-      src: {{ targeturl }}
-      dest: {{ targetdir }}
+      src: '{{ targeturl }}'
+      dest: '{{ targetdir }}'
       remote_src: yes
