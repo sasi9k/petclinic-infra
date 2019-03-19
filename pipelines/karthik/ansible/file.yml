@@ -30,5 +30,5 @@
       dest: '{{ targetdir }}'
   - name: adding template to target dir
     template:
-    src: petclinic/src/main/resources/email_template.j2
-    dest: "{{ targetdir }}/email.txt"
+      src: petclinic/src/main/resources/email_template.j2
+      dest: "{{ targetdir }}/email.txt"
