@@ -14,7 +14,8 @@
       state: absent
   - name: "create target directory for webserver"
     file: path={{ targetdir }} state=directory
-  - name: "download spring-petclinic from Internet"
-    get_url:
-      dest: '{{ targetdir }}'
-      url: '{{ targeturl }}'
+  - name: Unarchive a file that needs to be downloaded from internet
+    unarchive:
+      src: {{ targeturl }}
+      dest: {{ targetdir }}
+      remote_src: yes
