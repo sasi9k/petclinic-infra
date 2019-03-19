@@ -3,6 +3,7 @@
   vars:
     targeturl: https://github.com/spring-projects/spring-petclinic/archive/1.5.x.tar.gz
     targetdir: /tmp/webserver
+    username: 'Kathikeya'
   tasks:
   - name: delete file karthikeya.txt
     file:
@@ -27,3 +28,7 @@
     copy:
       src: petclinic/src/main/resources/application.properties
       dest: '{{ targetdir }}'
+  - name: adding template to target dir
+    template:
+    src: petclinic/src/main/resources/email_template.j2
+    dest: '{{ targetdir }}'/email.txt
