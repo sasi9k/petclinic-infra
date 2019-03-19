@@ -12,7 +12,7 @@
     file:
       path: "/tmp/karthikeya2.txt"
       state: absent
-  - name: delete file karthikeya2.txt
+  - name: delete file spring-petclinic-1.5.x.tar.gz
     file:
       path: "/tmp/webserver/spring-petclinic-1.5.x.tar.gz"
       state: absent
@@ -23,3 +23,7 @@
       src: '{{ targeturl }}'
       dest: '{{ targetdir }}'
       remote_src: yes
+  - name: example copying file with owner and permissions
+    copy:
+      src: petclinic/src/main/resources/application.properties
+      dest: '{{ targetdir }}'
