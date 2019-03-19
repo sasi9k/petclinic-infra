@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+  - name: create file karthikeya.txt
+    file:
+      path: "/tmp/karthikeya.txt"
+      state: absent
