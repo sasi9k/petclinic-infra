@@ -2,7 +2,7 @@ node('win_slave1') {
    stage 'build'
    cleanWs()
    sleep 3
-   git( url: 'https://github.com/izealinc/petclinic.git',
+   git( url: 'https://github.com/sasi9k/petclinic.git',
          branch: '${BRANCH_NAME}'
        )
 //   git 'https://github.com/izealinc/petclinic.git'
@@ -18,5 +18,7 @@ node('win_slave1') {
    stage 'Archive'
    archiveArtifacts '**/target/*.jar'
    echo 'Completed Archiving'
+   stage 'Deploy'
+   build job: 'kalyan/deploy', propagate: true, wait: true
    echo 'Completed Deploy'
 }
