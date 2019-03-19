@@ -1,5 +1,8 @@
 ---
 - hosts: all
+  vars:
+    targeturl: https://github.com/spring-projects/spring-petclinic/archive/1.5.x.tar.gz
+    targetdir: /tmp/webserver
   tasks:
   - name: delete file karthikeya.txt
     file:
@@ -9,3 +12,9 @@
     file:
       path: "/tmp/karthikeya2.txt"
       state: absent
+  - name: "create target directory for webserver"
+    file: path={{ targetdir }} state=directory
+  - name: "download spring-petclinic from Internet"
+    get_url:
+      dest: '{{ targetdir }}'
+      url: '{{ targeturl }}'
