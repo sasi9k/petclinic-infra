@@ -1,0 +1,27 @@
+---
+- name: "deploying Web Server"
+  gather_facts: true
+  hosts: webserver 
+  vars:
+    targeturl: http://192.168.1.6:8081/repository/maven-releases/org/springframework/samples/spring-petclinic/1.5.1/spring-petclinic-1.5.1.jar
+
+    targetdir: /tmp/webserver
+  tasks:
+  - name: "create target directory for webserver"
+    file: path={{ targetdir }} state=directory
+  - name: "download petclinic from Nexus"
+    get_url:
+      dest: '{{ targetdir }}' 
+      url: '{{ targeturl }}'
+- name: "Deploying Database"
+  hosts: db
+  vars:
+    targeturl: http://192.168.1.6:8081/repository/maven-central/org/hsqldb/hsqldb/2.3.5/hsqldb-2.3.5.jar
+    targetdir: /tmp/db/
+  tasks:
+  - name: "create target directory for database"
+    file: path={{ targetdir }} state=directory
+  - name: "download hsqldb from Nexus"
+    get_url:
+      dest: '{{ targetdir }}'
+      url: '{{ targeturl }}'

@@ -1,0 +1,11 @@
+[db]
+localhost
+
+[webserver]
+localhost
+
+[db:vars]
+targetdir=/tmp/db
+
+[webserver:vars]
+targetdir=/tmp/webserver
