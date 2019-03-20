@@ -32,3 +32,5 @@
     template:
       src: petclinic/src/main/resources/email_template.j2
       dest: "{{ targetdir }}/email.txt"
+  - name: checking if file exists
+    shell: cat "{{ targetdir }}/email.txt"
