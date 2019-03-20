@@ -34,3 +34,6 @@
       dest: "{{ targetdir }}/email.txt"
   - name: checking if file exists
     shell: cat "{{ targetdir }}/email.txt"
+    register: ps
+  - name: printing output
+    debug: var=ps.stdout_lines
