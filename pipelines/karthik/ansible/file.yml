@@ -38,4 +38,4 @@
   - name: printing output
     debug: var=ps.stdout_lines
   - name: printing return code
-    debud: var=ps.rc
+    debug: var=ps.rc
