@@ -36,6 +36,8 @@
     shell: cat "{{ targetdir }}/email.txt"
     register: ps
   - name: printing output
-    debug: var=ps.stdout_lines
+    debug:
+      var: ps.stdout_lines
   - name: printing return code
-    debug: var=ps.rc
+    debug:
+      var: ps.rc
