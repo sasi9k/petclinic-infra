@@ -1,4 +1,5 @@
 #!/bin/bash
+export JAVA_HOME=/usr/lib/jvm/default-java
 cd "$(dirname "$0")"
 ./mvnw -U -gs settings.xml  org.apache.maven.plugins:maven-dependency-plugin:2.8:copy \
                   -Dartifact=%GROUPID%:%ARTIFACTID%:%VERSION%-SNAPSHOT:%PACKAGING% \
